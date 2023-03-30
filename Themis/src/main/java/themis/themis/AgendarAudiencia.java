@@ -6,10 +6,6 @@ package themis.themis;
 
 import java.util.*;
 
-/**
- *
- * @author aluno
- */
 public class AgendarAudiencia {
 
     private int numProcesso;
