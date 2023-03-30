@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  *
- * @author aluno
+ * @author Victor Fagundes e Matheus Soares
  */
 public class AgendarAudiencia {
 
