@@ -10,8 +10,8 @@ import java.util.*;
  */
 public class ResumoProcesso {
         private int numProcesso; 
-        public Date dataCadastro;
-        public Date dataAudiencia; 
+        public String dataCadastro;
+        public String dataAudiencia; 
         public String tribunal; 
         public String vara; 
         public String categoria;
@@ -23,8 +23,8 @@ public class ResumoProcesso {
         Scanner ler = new Scanner(System.in);
         
         public ResumoProcesso(int aNumProcesso, 
-                                    Date aDataCadastro, 
-                                    Date aDataAudiencia, 
+                                    String aDataCadastro, 
+                                    String aDataAudiencia, 
                                     String aTribunal, 
                                     String aVara, 
                                     String aCategoria, 
@@ -75,10 +75,10 @@ public class ResumoProcesso {
         public int getNumProcesso(){
             return this.numProcesso;
         } 
-        public Date getdataCadastro(){
+        public String getdataCadastro(){
             return this.dataCadastro;
         } 
-        public Date getdataAudiencia(){
+        public String getdataAudiencia(){
             return this.dataAudiencia;
         } 
         public String gettribunal(){

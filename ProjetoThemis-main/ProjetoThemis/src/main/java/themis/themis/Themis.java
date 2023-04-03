@@ -36,6 +36,8 @@ public class Themis {
                 break;
             case 2:
                 System.out.println("Você escolheu Acessar Resumo.");
+                ResumoProcesso resumir = new ResumoProcesso(1,"Data cadastro: ","Data audiencia: ","Tribunal: ","Vara: ","Categoria: ","Comentarios: ","Nome empregador: ","Nome advogado: ","Orgão judicial: ");
+                resumir.atualizarDados(1);
                 break;
             case 3:
                 System.out.println("Você escolheu Agendar uma Audiência.");
