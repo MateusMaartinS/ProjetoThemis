@@ -17,13 +17,13 @@ public class CadastroProcesso {
     private String nomeEmpregador;
     private String nomeAdvogado;
     public String status;
-    public Date dataCadastro;
+    public String dataCadastro;
     public String tribunal;
     public String vara;
     public String categoria;
     public String orgaoJudicial;
 
-    public CadastroProcesso(int aNumProcesso, String aAssunto, String aNomeEmpregador, String aNomeAdvogado, String aStatus, Date aDataCadastro, String aTribunal, String aVara, String aCategoria, String aOrgaoJudicial) {
+    public CadastroProcesso(int aNumProcesso, String aAssunto, String aNomeEmpregador, String aNomeAdvogado, String aStatus, String aDataCadastro, String aTribunal, String aVara, String aCategoria, String aOrgaoJudicial) {
         this.numProcesso = aNumProcesso;
         this.assunto = aAssunto;
         this.nomeEmpregador = aNomeEmpregador;
@@ -68,7 +68,7 @@ public class CadastroProcesso {
         return status;
     }
 
-    public Date getDataCadastro() {
+    public String getDataCadastro() {
         return dataCadastro;
     }
 

@@ -31,7 +31,8 @@ public class Themis {
         switch (opcao) {
             case 1:
                 System.out.println("Você escolheu Cadastrar um Processo Civil.");
-                 
+                CadastroProcesso cadastrar = new CadastroProcesso(1, "Assunto", "Mateus", "João", "OK", "03/03/2023", "Tribunal", "Vara", "Quebra de Contrato", "Governo");
+                cadastrar.verificarDados(1);
                 break;
             case 2:
                 System.out.println("Você escolheu Acessar Resumo.");
