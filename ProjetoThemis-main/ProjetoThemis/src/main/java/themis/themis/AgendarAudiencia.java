@@ -14,7 +14,7 @@ public class AgendarAudiencia {
 
     private int numProcesso;
     private int numAudiencia;
-    public Date dataAudiencia;
+    public String dataAudiencia;
     public String tribunal;
     public String vara;
     public String orgaoJudicial;
@@ -23,7 +23,7 @@ public class AgendarAudiencia {
     public String status;
     public String decisao = "0";
 
-    public AgendarAudiencia(int aNumProcesso, int aNumAudiencia, Date aDataAudiencia, String aTribunal, String aVara, String aOrgaoJudicial, String aNomeEmpregaodr, String aNomeAdvogado, String aStatus){
+    public AgendarAudiencia(int aNumProcesso, int aNumAudiencia, String aDataAudiencia, String aTribunal, String aVara, String aOrgaoJudicial, String aNomeEmpregaodr, String aNomeAdvogado, String aStatus){
         this.numProcesso = aNumProcesso;
         this.numAudiencia = aNumAudiencia;
         this.dataAudiencia = aDataAudiencia;
@@ -59,7 +59,7 @@ public class AgendarAudiencia {
     public int getNumAudiencia(){
         return this.numAudiencia;
     }
-    public Date getDataAudiencia(){
+    public String getDataAudiencia(){
         return this.dataAudiencia;
     }
     public String getTribunal(){

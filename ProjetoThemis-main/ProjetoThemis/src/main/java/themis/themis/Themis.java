@@ -41,6 +41,8 @@ public class Themis {
                 break;
             case 3:
                 System.out.println("Você escolheu Agendar uma Audiência.");
+                AgendarAudiencia agendar = new AgendarAudiencia(1, 2, "03/09/2002", "tribunal","vara", "orgao", "Victor", "Matheus", "ativo");
+                agendar.verificarAudiencia(2);
                 break;
             case 4:
                 System.out.println("Você escolheu inserir um comentário.");
