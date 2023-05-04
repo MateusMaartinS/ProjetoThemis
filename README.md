@@ -33,7 +33,8 @@ Todas as variaveis que serão passadas no parametro será usado inicial p    Exe
 NÃO USAR APENAS UM SYSTEM.OUT.PRINT para sequencias de informações
 
 Os metodos serão declarados apos o metodo construtor e os gets and seters apos os metodos
-Exemplo : //Metodos
+Exemplo : 
+//Metodos
 varios metodos
 
 
