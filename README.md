@@ -24,3 +24,11 @@ https://app.diagrams.net/#G19Ts9KAThVJ7Tq3eJvhUgQwq5T0U22hQ5
 
 
 
+# PADROES
+
+Todas as classes deverão atualizadar o atual desenvolvedor > * Desenvolvedor Atual: Nathan Felipe Oestreich Graebin
+
+Todas as variaveis que serão passadas no parametro será usado inicial p    Exemplo : public void cadastrar( String pNome )
+
+Usar apenas um SYSTEM.OUT.PRINT para sequencias de informações
+
