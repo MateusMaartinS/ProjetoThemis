@@ -30,5 +30,5 @@ Todas as classes deverão atualizadar o atual desenvolvedor > * Desenvolvedor At
 
 Todas as variaveis que serão passadas no parametro será usado inicial p    Exemplo : public void cadastrar( String pNome )
 
-Usar apenas um SYSTEM.OUT.PRINT para sequencias de informações
+NÃO USAR APENAS UM SYSTEM.OUT.PRINT para sequencias de informações
 
