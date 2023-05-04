@@ -46,4 +46,6 @@ varios metodos
 //Getters And Seters
 Varios Gets Sets
 
+IMPORTANTE : Dentro das Classes é preciso garantir que as classes PRIVATES tenham metodos GETS AND SETS, mas os atributos PUBLIC não precisam dos metodos gets and sets
+
 
