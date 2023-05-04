@@ -31,19 +31,19 @@ https://app.diagrams.net/#G19Ts9KAThVJ7Tq3eJvhUgQwq5T0U22hQ5
 
 # PADRÕES
 
-    Todas as classes deverão atualizadar o atual desenvolvedor > Desenvolvedor Atual: Nathan Felipe Oestreich Graebin
+Todas as classes deverão atualizadar o atual desenvolvedor > Desenvolvedor Atual: Nathan Felipe Oestreich Graebin
 
-    Todas as variaveis que serão passadas no parametro será usado inicial p    Exemplo : public void cadastrar( String pNome )
+Todas as variaveis que serão passadas no parametro será usado inicial p    Exemplo : public void cadastrar( String pNome )
 
-    NÃO USAR APENAS UM SYSTEM.OUT.PRINT para sequencias de informações
+NÃO USAR APENAS UM SYSTEM.OUT.PRINT para sequencias de informações
 
-    Os metodos serão declarados apos o metodo construtor e os gets and seters apos os metodos
-    Exemplo : 
-    //Metodos
-    varios metodos
+Os metodos serão declarados apos o metodo construtor e os gets and seters apos os metodos
+Exemplo : 
+//Metodos
+varios metodos
 
 
-    //Getters And Seters
-    Varios Gets Sets
+//Getters And Seters
+Varios Gets Sets
 
 
