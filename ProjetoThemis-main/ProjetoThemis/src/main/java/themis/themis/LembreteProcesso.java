@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+//Analista: Fernanda Hallman
+//Desenvolvedor Criador: Mateus Soares
+//Desenvolvedor Atual: João Marcos Contini Tavares Pereira
 package themis.themis;
-
 import java.util.*;
-
-/**
- *
- * @author Analista Fernanda e Desenvolvedor Matheus Soares
- */
-
 public class LembreteProcesso {
     private int numProcesso;
     private int numAudiencia;
@@ -25,39 +17,48 @@ public class LembreteProcesso {
     public String status;
     public String decisao;
     public String orgaoJudicial;
-
-    public LembreteProcesso(int aNumProcesso,
-            int aNumAudiencia,
-            int aNumLembrete,
-            String aDataAudiencia,
-            String aTribunal,
-            String aVara,
-            String aNomeEmpregador,
-            String aNomeAdvogado,
-            String aCategoria,
-            String aAssunto,
-            String aStatus) {
-        this.numProcesso = aNumProcesso;
-        this.numAudiencia = aNumAudiencia;
-        this.numLembrete = aNumLembrete;
-        this.dataAudiencia = aDataAudiencia;
-        this.tribunal = aTribunal;
-        this.vara = aVara;
-        this.nomeEmpregador = aNomeEmpregador;
-        this.nomeAdvogado = aNomeAdvogado;
-        this.categoria = aCategoria;
-        this.assunto = aAssunto;
-        this.status = aStatus;
+//Constructor
+    public LembreteProcesso(int pNumProcesso, int pNumAudiencia, int pNumLembrete, String pDataAudiencia, String pTribunal, String pVara,
+            String pNomeEmpregador, String pNomeAdvogado, String pCategoria, String pAssunto, String pStatus) {
+        this.numProcesso = pNumProcesso;
+        this.numAudiencia = pNumAudiencia;
+        this.numLembrete = pNumLembrete;
+        this.dataAudiencia = pDataAudiencia;
+        this.tribunal = pTribunal;
+        this.vara = pVara;
+        this.nomeEmpregador = pNomeEmpregador;
+        this.nomeAdvogado = pNomeAdvogado;
+        this.categoria = pCategoria;
+        this.assunto = pAssunto;
+        this.status = pStatus;
     }
-
-    public void verificarData(int aNumLembrete) {
-        if (this.numLembrete == aNumLembrete) {
-            System.out.println(
-                    String.format("Seu proceso numero %d está marcada para data: %s", numAudiencia, dataAudiencia));
-            System.out.println(String.format("O local da sua audiência no tribunal %s na vara %s no Órgão Judicial %s ",
-                    tribunal, vara, orgaoJudicial));
-            System.out.println(
-                    String.format("O cliente %s será defendido pelo advogado %s", nomeEmpregador, nomeAdvogado));
+//Metodos
+    public void verificarData(int pNumLembrete) {
+        if (this.numLembrete == pNumLembrete) {
+            System.out.println(String.format("Seu proceso numero %d está marcada para data: %s", numAudiencia, dataAudiencia));
+            System.out.println(String.format("O local da sua audiência no tribunal %s na vara %s no Órgão Judicial %s ",tribunal, vara, orgaoJudicial));
+            System.out.println(String.format("O cliente %s será defendido pelo advogado %s", nomeEmpregador, nomeAdvogado));
+            System.out.println(String.format("O status da audiência é %s", status));
+            if (this.decisao.equals("0")) {System.out.println("A decisão ainda não foi tomada!");
+            } else {
+                System.out.println(String.format("A decisão da audiência foi %s ", decisao));
+            }
+        } else {
+            System.out.println("Audiencia não encontrada!");
+        }
+    }
+    public void gerarLembrete(int pNumAudiencia, String pDataAudiencia, String pTribunal, String pAssunto, String pStatus) {
+        this.numAudiencia = pNumAudiencia;
+        this.dataAudiencia = pDataAudiencia;
+        this.tribunal = pTribunal;
+        this.assunto = pAssunto;
+        this.status = pStatus;
+    }
+    public void mostrarLembrete(int pNumLembrete) {
+        if (this.numLembrete == pNumLembrete) {
+            System.out.println(String.format("Seu proceso numero %d está marcada para data: %s", numAudiencia, dataAudiencia));
+            System.out.println(String.format("O local da sua audiência no tribunal %s na vara %s no Órgão Judicial %s ",tribunal, vara, orgaoJudicial));
+            System.out.println(String.format("O cliente %s será defendido pelo advogado %s", nomeEmpregador, nomeAdvogado));
             System.out.println(String.format("O status da audiência é %s", status));
             if (this.decisao.equals("0")) {
                 System.out.println("A decisão ainda não foi tomada!");
@@ -68,76 +69,23 @@ public class LembreteProcesso {
             System.out.println("Audiencia não encontrada!");
         }
     }
-
-    public void gerarLembrete(int aNumAudiencia, String aDataAudiencia, String aTribunal, String aAssunto,
-            String aStatus) {
-        this.numAudiencia = aNumAudiencia;
-        this.dataAudiencia = aDataAudiencia;
-        this.tribunal = aTribunal;
-        this.assunto = aAssunto;
-        this.status = aStatus;
-    }
-
-    public void mostrarLembrte(int aNumLembrete) {
-        if (this.numLembrete == aNumLembrete) {
-            System.out.println(
-                    String.format("Seu proceso numero %d está marcada para data: %s", numAudiencia, dataAudiencia));
-            System.out.println(String.format("O local da sua audiência no tribunal %s na vara %s no Órgão Judicial %s ",
-                    tribunal, vara, orgaoJudicial));
-            System.out.println(
-                    String.format("O cliente %s será defendido pelo advogado %s", nomeEmpregador, nomeAdvogado));
-            System.out.println(String.format("O status da audiência é %s", status));
-            if (this.decisao.equals("0")) {
-                System.out.println("A decisão ainda não foi tomada!");
-            } else {
-                System.out.println(String.format("A decisão da audiência foi %s ", decisao));
-            }
-        } else {
-            System.out.println("Audiencia não encontrada!");
-        }
-    }
-
+//Getters and Setters
     public int getNumProcesso() {
         return this.numProcesso;
     }
-
     public int getNumAudiencia() {
         return this.numAudiencia;
     }
-
     public int getNumLembrete() {
         return this.numLembrete;
     }
-
-    public String getDataAudiencia() {
-        return this.dataAudiencia;
+    public void setNumProcesso(int pProcesso) {
+        this.numProcesso = pProcesso;
     }
-
-    public String getTribunal() {
-        return this.tribunal;
+    public void setNumAudiencia(int pAudiencia) {
+        this.numAudiencia = pAudiencia;
     }
-
-    public String getVara() {
-        return this.vara;
-    }
-
-    public String getNomeEmpregador() {
-        return this.nomeEmpregador;
-    }
-
-    public String getNomeAdvogado() {
-        return this.nomeAdvogado;
-    }
-
-    public String getCategoria() {
-        return this.categoria;
-    }
-
-    public String getAssunto() {
-        return this.assunto;
-    }
-
-    public String getStatus() {
-        return this.status;
+    public void setNumLembrete(int pLembrete) {
+        this.numLembrete = pLembrete;
     }
 }
