@@ -53,7 +53,7 @@ public class AgendarAudiencia {
     public void setDecisao(String aDecisao){
         this.decisaoAudiencia = aDecisao;  
     }
-    public int getNumAudiencia(){
+    public int getNumeroAudiencia(){
         return this.numeroAudiencia;
     }
 }
