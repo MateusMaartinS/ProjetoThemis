@@ -8,81 +8,52 @@ import java.util.*;
 
 /**
  *
- * @author Desenvolvedor Victor Fagundes e Analista Matheus Soares
+ * @author Desenvolvedor Inicial: Victor Fagundes
+ *         Analista: Matheus Soares
+ *         Desenvolvedor atual: Willyan Junior Ribeiro
  */
 public class AgendarAudiencia {
 
-    private int numProcesso;
-    private int numAudiencia;
+    private int numeroAudiencia;
     public String dataAudiencia;
-    public String tribunal;
-    public String vara;
+    public String tribunalJudiciario;
+    public String varaJudiciaria;
     public String orgaoJudicial;
     public String nomeEmpregador;
     public String nomeAdvogado;
-    public String status;
-    public String decisao = "0";
+    public String statusAudiencia;
+    public String decisaoAudiencia = "0";
 
-    public AgendarAudiencia(int aNumProcesso, int aNumAudiencia, String aDataAudiencia, String aTribunal, String aVara, String aOrgaoJudicial, String aNomeEmpregaodr, String aNomeAdvogado, String aStatus){
-        this.numProcesso = aNumProcesso;
-        this.numAudiencia = aNumAudiencia;
-        this.dataAudiencia = aDataAudiencia;
-        this.tribunal = aTribunal;
-        this.vara = aVara;
-        this.orgaoJudicial = aOrgaoJudicial;
-        this.nomeEmpregador = aNomeEmpregaodr;
-        this.nomeAdvogado = aNomeAdvogado;
-        this.status = aStatus;
+    public AgendarAudiencia(int pNumeroProcesso, int pNumeroAudiencia, String pDataAudiencia, String pTribunal, String pVara, String pOrgaoJudicial, String pNomeEmpregador, String pNomeAdvogado, String pStatus){
+        this.numeroAudiencia = pNumeroAudiencia;
+        this.dataAudiencia = pDataAudiencia;
+        this.tribunalJudiciario = pTribunal;
+        this.varaJudiciaria = pVara;
+        this.orgaoJudicial = pOrgaoJudicial;
+        this.nomeEmpregador = pNomeEmpregador;
+        this.nomeAdvogado = pNomeAdvogado;
+        this.statusAudiencia = pStatus;
     }
-
-    public void verificarAudiencia(int aNumAudiencia) {
-        if (this.numAudiencia == aNumAudiencia) {
-            System.out.println(String.format("Sua Audiência numero %d está marcada para data: %s", numAudiencia, dataAudiencia));
-            System.out.println(String.format("O local da sua audiência no tribunal %s na vara %s no Órgão Judicial %s ", tribunal, vara, orgaoJudicial));
-            System.out.println(String.format("O cliente %s será defendido pelo advogado %s", nomeEmpregador, nomeAdvogado));
-            System.out.println(String.format("O status da audiência é %s", status));
-            if (this.decisao.equals("0")) {
+        public void tomarDecisao(int pNumeroAudiencia){
+            if (this.decisaoAudiencia.equals("0")) {
                 System.out.println("A decisão ainda não foi tomada!");
             } else {
-                System.out.println(String.format("A decisão da audiência foi %s ", decisao));
+                System.out.println(String.format("A decisão da audiência foi %s ", decisaoAudiencia));
             }
-        } else {
-            System.out.println("Audiencia não encontrada!");
-        }       
+                System.out.println("Audiencia não encontrada!");     
     }    
+        public void mostrarAudiencia(int pNumeroAudiencia) {
+        if (this.numeroAudiencia == pNumeroAudiencia) {
+            System.out.println(String.format("Sua Audiência numero %d está marcada para data: %s", numeroAudiencia, dataAudiencia));
+            System.out.println(String.format("O local da sua audiência no tribunal %s na vara %s no Órgão Judicial %s ", tribunalJudiciario, varaJudiciaria, orgaoJudicial));
+            System.out.println(String.format("O cliente %s será defendido pelo advogado %s", nomeEmpregador, nomeAdvogado));
+            System.out.println(String.format("O status da audiência é %s", statusAudiencia));
+        }
+    }      
     public void setDecisao(String aDecisao){
-        this.decisao = aDecisao;  
-    }
-    public int getNumProcesso(){
-        return this.numProcesso;
+        this.decisaoAudiencia = aDecisao;  
     }
     public int getNumAudiencia(){
-        return this.numAudiencia;
+        return this.numeroAudiencia;
     }
-    public String getDataAudiencia(){
-        return this.dataAudiencia;
-    }
-    public String getTribunal(){
-        return this.tribunal;
-    }
-    public String getVara(){
-        return this.vara;
-    }
-    public String getOrgaoJudicial(){
-        return this.orgaoJudicial;
-    }
-    public String getNomeEmpregador(){
-        return this.nomeEmpregador;
-    }
-    public String getNomeAdvogado(){
-        return this.nomeAdvogado;
-    }
-    public String getStatus(){
-        return this.status;
-    }
-    public String getDecisao(){
-        return this.decisao;
-    }
-    
-    
 }
