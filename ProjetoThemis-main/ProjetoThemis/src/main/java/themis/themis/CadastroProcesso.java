@@ -9,6 +9,7 @@ import java.util.*;
 /**
  *
  * @author Analista Victor, Desenvolvedor Matheus Martins
+ * Desenvolvedor Atual: Victor Fagundes Ramos
  */
 public class CadastroProcesso {
 
@@ -23,20 +24,20 @@ public class CadastroProcesso {
     public String categoria;
     public String orgaoJudicial;
 
-    public CadastroProcesso(int aNumProcesso, String aAssunto, String aNomeEmpregador, String aNomeAdvogado, String aStatus, String aDataCadastro, String aTribunal, String aVara, String aCategoria, String aOrgaoJudicial) {
-        this.numProcesso = aNumProcesso;
-        this.assunto = aAssunto;
-        this.nomeEmpregador = aNomeEmpregador;
-        this.nomeAdvogado = aNomeAdvogado;
-        this.status = aStatus;
-        this.dataCadastro = aDataCadastro;
-        this.tribunal = aTribunal;
-        this.categoria = aCategoria;
-        this.orgaoJudicial = aOrgaoJudicial;
+    public CadastroProcesso(int pNumProcesso, String pAssunto, String pNomeEmpregador, String pNomeAdvogado, String pStatus, String pDataCadastro, String pTribunal, String pVara, String pCategoria, String pOrgaoJudicial) {
+        this.numProcesso = pNumProcesso;
+        this.assunto = pAssunto;
+        this.nomeEmpregador = pNomeEmpregador;
+        this.nomeAdvogado = pNomeAdvogado;
+        this.status = pStatus;
+        this.dataCadastro = pDataCadastro;
+        this.tribunal = pTribunal;
+        this.categoria = pCategoria;
+        this.orgaoJudicial = pOrgaoJudicial;
     }
 
-    public void verificarDados(int aNumProcesso) {
-        if (this.numProcesso == aNumProcesso) {
+    public void verificarDados(int pNumProcesso) {
+        if (this.numProcesso == pNumProcesso) {
             System.out.println(String.format("Seu Processo numero %d foi cadastrado no dia: %s", numProcesso, dataCadastro));
             System.out.println(String.format("O local do processo foi cadastrado no tribunal %s na vara %s no Órgão Judicial %s ", tribunal, vara, orgaoJudicial));
             System.out.println(String.format("O cliente %s será defendido pelo advogado %s", nomeEmpregador, nomeAdvogado));
