@@ -7,6 +7,7 @@ import java.util.*;
 /**
  *
  * @author Felipe Koji Desenvolvedor e Analista Matheus Martins
+ * Desenvolvedor atual: Mateus Martins da Silva
  */
 public class ResumoProcesso {
         private int numProcesso; 
@@ -22,30 +23,30 @@ public class ResumoProcesso {
         public int atualizarDados = 0;
         Scanner ler = new Scanner(System.in);
         
-        public ResumoProcesso(int aNumProcesso, 
-                                    String aDataCadastro, 
-                                    String aDataAudiencia, 
-                                    String aTribunal, 
-                                    String aVara, 
-                                    String aCategoria, 
-                                    String aComentarios, 
-                                    String aNomeEmpregador, 
-                                    String aNomeAdvogado, 
-                                    String aOrgaoJudicial){
-            this.numProcesso = aNumProcesso;
-            this.dataCadastro = aDataCadastro; 
-            this.dataAudiencia = aDataAudiencia;
-            this.tribunal = aTribunal;
-            this.vara = aVara;
-            this.categoria = aCategoria;
-            this.comentarios = aComentarios;
-            this.nomeEmpregador = aNomeEmpregador;
-            this.nomeAdvogado = aNomeAdvogado;
-            this.orgaoJudicial = aOrgaoJudicial;
+        public ResumoProcesso(int pNumProcesso, 
+                                    String pDataCadastro, 
+                                    String pDataAudiencia, 
+                                    String pTribunal, 
+                                    String pVara, 
+                                    String pCategoria, 
+                                    String pComentarios, 
+                                    String pNomeEmpregador, 
+                                    String pNomeAdvogado, 
+                                    String pOrgaoJudicial){
+            this.numProcesso = pNumProcesso;
+            this.dataCadastro = pDataCadastro; 
+            this.dataAudiencia = pDataAudiencia;
+            this.tribunal = pTribunal;
+            this.vara = pVara;
+            this.categoria = pCategoria;
+            this.comentarios = pComentarios;
+            this.nomeEmpregador = pNomeEmpregador;
+            this.nomeAdvogado = pNomeAdvogado;
+            this.orgaoJudicial = pOrgaoJudicial;
         }
         
-        public void resumirProcesso(int aNumProcesso){
-            if(this.numProcesso == aNumProcesso){
+        public void resumirProcesso(int pNumProcesso){
+            if(this.numProcesso == pNumProcesso){
                 System.out.println(String.format("O processo %d, cadastrado em %s está com a audiencia marcada para %s", numProcesso, dataCadastro, dataAudiencia));
                 System.out.println(String.format( "Será no tribunal %s. Número Vara:%s. Categoria:%s",tribunal, vara, categoria));
                 System.out.println(String.format("Comentarios sobre o processo:%s ", comentarios));
@@ -55,7 +56,7 @@ public class ResumoProcesso {
             }
         }
         
-        public void atualizarDados(int aAtualizarDados){
+        public void atualizarDados(int pAtualizarDados){
             System.out.println("Pressione 1 para atualizar dados ");
             System.out.println("Pressione 0 para sair");
             atualizarDados = ler.nextInt();
@@ -64,11 +65,11 @@ public class ResumoProcesso {
             }else{   }    
         }   
         
-        public void visualizarResumo(int aVisualizarResumo){
+        public void visualizarResumo(int pVisualizarResumo){
             System.out.println(String.format("Numero do processo:%s", numProcesso));
         }
         
-        public void excluirProcesso(int aExcluirProcesso){
+        public void excluirProcesso(int pExcluirProcesso){
             System.out.println("Processo excluido com sucesso!");
         }
         
