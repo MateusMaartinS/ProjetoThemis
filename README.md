@@ -50,4 +50,16 @@ IMPORTANTE : Dentro das Classes é preciso garantir que as classes PRIVATES tenh
 
 usar o @OVERRIDE 
 
+# PROXIMA ETAPA PARA DIA > 24/05
 
+1 super classe
+
+2 subclasse(filha)
+
+1 classe neta
+
+2 metodos override em cada classe FILHA
+
+e um metodo override na classe NETA
+
+e cada classe existete precisa ter no minimo 1 metodo overload
