@@ -34,7 +34,7 @@ public class Themis {
                 case 3:
                     System.out.println("Você escolheu Agendar uma Audiência.");
                     agendar = new AgendarAudiencia(1, 2, "03/09/2002", "tribunal", "vara", "orgao", "Victor", "Matheus", "ativo");
-                    agendar.verificarAudiencia(2);
+                    //agendar.verificarAudiencia(1);
                     break;
                 case 4:
                     System.out.println("Você escolheu inserir um comentário.");
@@ -78,7 +78,7 @@ public class Themis {
                             lembreteProcesso.gerarLembrete(1, new Date().toString(), "Tribunal", bilhete, "Status");
                             break;
                         case 2:
-                            lembreteProcesso.mostrarLembrte(01);
+                            lembreteProcesso.mostrarLembrete(01);
                             break;
                         case 3:
                             System.out.println("Você escolheu Sair!");
@@ -181,4 +181,6 @@ public class Themis {
             }
         }
     }
+        
+        
 }
