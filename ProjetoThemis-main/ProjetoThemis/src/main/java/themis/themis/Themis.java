@@ -11,6 +11,8 @@ public class Themis {
             CadastroProcesso cadastrar;
             AgendarAudiencia agendar;
             ComentariosProcessos comentario = new ComentariosProcessos();
+            FinalizarProcesso finalizarProcesso = new FinalizarProcesso();
+            
 
             System.out.println("Bem vindo! Escolha uma das opções!");
             System.out.println("-------------------------------------------------");
@@ -70,91 +72,7 @@ public class Themis {
                     }
                     break;
                 case 6:
-                    System.out.println("Você escolheu Finalizar um Processo.");
-                    System.out.println("Informe os dados do processo :");
-                    System.out.println("----------------------------------------");
-
-                    System.out.print("Número do Processo: ");
-                    int numProc = Integer.parseInt(teclado.nextLine());
-
-                    System.out.print("Número da Audiência: ");
-                    int numAudi = Integer.parseInt(teclado.nextLine());
-
-                    System.out.print("Tribunal: ");
-                    String trib = teclado.nextLine();
-
-                    System.out.print("Vara: ");
-                    String vara = teclado.nextLine();
-
-                    System.out.print("Orgão Judicial: ");
-                    String orgao = teclado.nextLine();
-
-                    System.out.print("Categoria: ");
-                    String categ = teclado.nextLine();
-
-                    System.out.print("Assunto: ");
-                    String assunto = teclado.nextLine();
-
-                    System.out.print("Nome do Empregador: ");
-                    String nomeEmp = teclado.nextLine();
-
-                    System.out.print("Nome do Advogado: ");
-                    String nomeAdv = teclado.nextLine();
-
-                    System.out.print("Status: ");
-                    String status = teclado.nextLine();
-
-                    System.out.print("Sentença: ");
-                    String sentenca = teclado.nextLine();
-
-                    System.out.print("Remuneração: ");
-                    double remun = teclado.nextDouble();
-
-                    System.out.print("Vai Recorrer: ");
-                    boolean recorrer = teclado.nextBoolean();
-
-                    FinalizarProcesso processo = new FinalizarProcesso(numProc, numAudi, trib, vara, orgao, categ,
-                            assunto,
-                            nomeEmp, nomeAdv, status, sentenca, remun, recorrer);
-
-                    System.out.println("Escolha uma opção:");
-                    System.out.println("--------------------------------------");
-                    System.out.println("1 - Verificar Recorrência");
-                    System.out.println("2 - Gerar Remuneração");
-                    System.out.println("3 - Gerar Sentença");
-                    System.out.println("4 - Mostrar dados do processo");
-                    System.out.println("Digite qualquer outro número para sair");
-                    System.out.println("--------------------------------------");
-                    opcao = teclado.nextInt();
-
-                    switch (opcao) {
-                        case 1:
-                            processo.verificarRecorrencia();
-                            break;
-                        case 2:
-                            processo.gerarRemuneracao(processo.getRemuneracao(), processo.getSentenca(),
-                                    processo.getVaiRecorrer());
-                            break;
-                        case 3:
-                            processo.gerarSentenca();
-                            break;
-                        case 4:
-                            System.out.println("Número do Processo: " + processo.getNumProcesso());
-                            System.out.println("Número da Audiência: " + processo.getNumAudiencia());
-                            System.out.println("Tribunal: " + processo.getTribunal());
-                            System.out.println("Vara: " + processo.getVara());
-                            System.out.println("Orgão Judicial: " + processo.getOrgaoJudicial());
-                            System.out.println("Categoria: " + processo.getCategoria());
-                            System.out.println("Assunto: " + processo.getAssunto());
-                            System.out.println("Nome do Empregador: " + processo.getNomeEmpregador());
-                            System.out.println("Nome do Advogado: " + processo.getNomeAdvogado());
-                            System.out.println("Status: " + processo.getStatus());
-                            System.out.println("Sentença: " + processo.getSentenca());
-                            System.out.println("Remuneração: " + processo.getRemuneracao());
-                            System.out.println("Vai Recorrer: " + processo.getVaiRecorrer());
-                        default:
-                            break;
-                    }
+                    finalizarProcesso.menuFinalizarProcesso();
                     break;
                 case 7:
                     System.out.println("Você escolheu Sair");
