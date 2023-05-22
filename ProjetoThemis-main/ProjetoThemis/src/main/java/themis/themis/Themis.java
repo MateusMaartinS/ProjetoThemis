@@ -1,13 +1,17 @@
 package themis.themis;
+
 import java.util.*;
+
 public class Themis {
-	public static void main(String[] args) {
-            int i = 0;
-            while (i == 0) {
+
+    public static void main(String[] args) {
+        int i = 0;
+        while (i == 0) {
             Scanner teclado = new Scanner(System.in);
             CadastroProcesso cadastrar;
             AgendarAudiencia agendar;
-            
+            ComentariosProcessos comentario = new ComentariosProcessos();
+
             System.out.println("Bem vindo! Escolha uma das opções!");
             System.out.println("-------------------------------------------------");
             System.out.println("1 - Cadastrar um Processo Civil.");
@@ -37,31 +41,11 @@ public class Themis {
                     //agendar.verificarAudiencia(1);
                     break;
                 case 4:
-                    System.out.println("Você escolheu inserir um comentário.");
-                    System.out.println("1 - Adicionar Comentário");
-                    System.out.println("2 - Apagar um comentário.");
-                    System.out.println("3 - Sair");
-                    opcao = Integer.parseInt(teclado.nextLine());
-                    String comentarios;
-                    ComentariosProcessos comentario = new ComentariosProcessos();
-                    switch (opcao) {
-                        case 1:
-                            System.out.println("Escreva o comentário que deseja adicionar: ");
-                            comentarios = teclado.nextLine();
-                            comentario.comentariosProcesso(1, 2, "12/06/2023", "Tribunal", "Vara", "Quebra de Contrato", comentarios, "13/06/2023", "Jose");
-                            System.out.println("Comentário Adicionado com sucesso!");
-                            comentario.indentificarComentario(1, 2, "12/06/2023", "Tribunal", "Vara", "Quebra de Contrato", "Comentario", "13/06/2023", "Jose");
-                            break;
-                        case 2:
-                            comentario.apagarComentario("Comentario", "13/06/2023");
-                            break;
-                        case 3:
-                            System.out.println("Você escolheu Sair!");
-                            break;
-                        default:
-                            System.out.println("Opção Invalida!");
-                    }
+
+                    comentario.menuComentariosProcessos();
                     break;
+                    
+                    
                 case 5:
                     System.out.println("Você escolheu Adicionar um Lembrete.");
                     System.out.println("1 - Adicionar Lembrete");
@@ -181,6 +165,5 @@ public class Themis {
             }
         }
     }
-        
-        
+
 }
