@@ -38,7 +38,7 @@ public class Themis {
                 case 1:
                     System.out.println("Você escolheu Cadastrar um Processo Civil.");
                     cadastrar = new CadastroProcesso(1, "Assunto", "Mateus", "João", "OK", "03/03/2023", "Tribunal", "Vara", "Quebra de Contrato", "Governo");
-                    cadastrar.verificarDados(1);
+                    cadastrar.verificarDados();
                     break;
                 case 2:
                     System.out.println("Você escolheu Acessar Resumo.");
