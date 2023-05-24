@@ -6,7 +6,7 @@ import java.util.*;
  *
  * @author Fernanda Desenvolvedor, Renan Analista
  */ //Novo desenvolvedor : Nathan
-public class FinalizarProcesso {
+public class FinalizarProcesso extends ComentariosProcessos {
 
     Scanner Ler = new Scanner(System.in);
 
