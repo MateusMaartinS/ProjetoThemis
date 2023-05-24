@@ -30,31 +30,42 @@ public class FinalizarProcesso extends ComentariosProcessos {
     public boolean gerarRemuneracao;
     public boolean gerarSentenca;
 
-    public FinalizarProcesso() {
+    public FinalizarProcesso(int numProcesso, int numAudiencia, double remuneracao, String vaiRecorrer, String sentenca,
+            String assunto, String nomeEmpregador, String nomeAdvogado,
+            String tribunal, String vara, String orgaoJudicial,
+            String categoria, String status, boolean gerarRemuneracao, boolean gerarSentenca,
+            int pNumAudiencia, int pNumProcesso, String pAssunto, String pNomeEmpregador,
+            String pDataAudiencia, String pTribunal,
+            String pVara, String pCategoria, String pComentarios,
+            String paDataComentario, int paNumProcesso, String paAssunto,
+            String paNomeEmpregador, String pNomeAdvogado, String pStatus,
+            String paDataCadastro, String paTribunal, String paVara,
+            String paCategoria, String paOrgaoJudicial) {
+        super(pNumAudiencia, pNumProcesso, pAssunto, pNomeEmpregador,
+                pDataAudiencia, pTribunal, pVara, pCategoria, 
+                pComentarios, paDataComentario, pNumProcesso,
+                pAssunto, pNomeEmpregador, pNomeAdvogado, pStatus, paDataCadastro, paTribunal,
+                paCategoria, pCategoria, paOrgaoJudicial);
+        this.numProcesso = numProcesso;
+        this.numAudiencia = numAudiencia;
+        this.remuneracao = remuneracao;
+        this.vaiRecorrer = vaiRecorrer;
+        this.sentenca = sentenca;
+        this.assunto = assunto;
+        this.nomeEmpregador = nomeEmpregador;
+        this.nomeAdvogado = nomeAdvogado;
+        this.tribunal = tribunal;
+        this.vara = vara;
+        this.orgaoJudicial = orgaoJudicial;
+        this.categoria = categoria;
+        this.status = status;
+        this.gerarRemuneracao = gerarRemuneracao;
+        this.gerarSentenca = gerarSentenca;
     }
 
-    public FinalizarProcesso(int pNumProcesso, int pNumAudiencia, String pTribunal, String pVara,
-            String pOrgaoJudicial, String pCategoria, String pAssunto, String pNomeEmpregador, String pNomeAdvogado,
-            String pStatus, String pSentenca, double pRemuneracao, String pVaiRecorrer, boolean pGerarRemuneracao,
-            boolean pGerarSentenca
-    ) {
-        this.numProcesso = pNumProcesso;
-        this.numAudiencia = pNumAudiencia;
-        this.tribunal = pTribunal;
-        this.vara = pVara;
-        this.orgaoJudicial = pOrgaoJudicial;
-        this.categoria = pCategoria;
-        this.assunto = pAssunto;
-        this.nomeEmpregador = pNomeEmpregador;
-        this.nomeAdvogado = pNomeAdvogado;
-        this.status = pStatus;
-        this.sentenca = pSentenca;
-        this.remuneracao = pRemuneracao;
-        this.vaiRecorrer = pVaiRecorrer;
-        this.gerarRemuneracao = pGerarRemuneracao;
-        this.gerarSentenca = pGerarSentenca;
+    
 
-    }
+    
 
     public void menuFinalizarProcesso() {
         int opcaoMenu = -1;
@@ -106,7 +117,10 @@ public class FinalizarProcesso extends ComentariosProcessos {
     }
 
     public void cadastrarProcessoParaFinalizar() {
-        finalizarProcessos.add(new FinalizarProcesso());
+        finalizarProcessos.add(new FinalizarProcesso(0, 0, 0, "", "",
+                "", "", "", "", "", "",
+                "", "", false, false, 0, 0, "", "", "", "", "", "", "", "", 0, "", "", "", "", "",
+                "", "", "", ""));
         for (int i = 0; i < finalizarProcessos.size(); i++) {
             if (finalizarProcessos.get(i).numProcesso == 0) {
                 System.out.println("INFORME O NUMERO DO PROCESSO QUE QUER FINALIZAR");
@@ -147,10 +161,8 @@ public class FinalizarProcesso extends ComentariosProcessos {
                 i = finalizarProcessos.size();
                 break;
 
-            } 
-            
-            
-            
+            }
+
         }
 
     }
