@@ -29,26 +29,21 @@ public class ComentariosProcessos extends CadastroProcesso {
     public String comentarios;
     public String dataComentario;
 
-    public ComentariosProcessos() {
-
+    public ComentariosProcessos(int numAudiencia, int numProcesso, String assunto, String nomeEmpregador, String dataAudiencia, String tribunal, String vara, String categoria, String comentarios, String dataComentario, int pNumProcesso, String pAssunto, String pNomeEmpregador, String pNomeAdvogado, String pStatus, String pDataCadastro, String pTribunal, String pVara, String pCategoria, String pOrgaoJudicial) {
+        super(pNumProcesso, pAssunto, pNomeEmpregador, pNomeAdvogado, pStatus, pDataCadastro, pTribunal, pVara, pCategoria, pOrgaoJudicial);
+        this.numAudiencia = numAudiencia;
+        this.numProcesso = numProcesso;
+        this.assunto = assunto;
+        this.nomeEmpregador = nomeEmpregador;
+        this.dataAudiencia = dataAudiencia;
+        this.tribunal = tribunal;
+        this.vara = vara;
+        this.categoria = categoria;
+        this.comentarios = comentarios;
+        this.dataComentario = dataComentario;
     }
 
-    public ComentariosProcessos(int pNumAudiencia, int pNumProcesso, String pAssunto, String pNomeEmpregador,
-            String pDataAudiencia, String pTribunal, String pVara, String pCategoria, String pComentarios,
-            String pDataComentario) {
-
-        this.numProcesso = pNumProcesso;
-        this.numAudiencia = pNumAudiencia;
-        this.dataAudiencia = pDataAudiencia;
-        this.tribunal = pTribunal;
-        this.vara = pVara;
-        this.assunto = pAssunto;
-        this.comentarios = pComentarios;
-        this.dataComentario = pDataComentario;
-        this.nomeEmpregador = pNomeEmpregador;
-        this.categoria = pCategoria;
-
-    }
+    
 
     //Metodos
     public void menuComentariosProcessos() {
@@ -108,7 +103,10 @@ public class ComentariosProcessos extends CadastroProcesso {
     }
 
     public void adicionarComentario() {
-        comentariosProcessos.add(new ComentariosProcessos());
+        comentariosProcessos.add(new ComentariosProcessos(0, 0, "", "",
+                "", "", "", "", "", "",
+                0, null, "", "", "", "",
+                "", "", "", ""));
 
         for (int i = 0; i < comentariosProcessos.size(); i++) {
             if (comentariosProcessos.get(i).numProcesso == 0) {
@@ -241,7 +239,10 @@ public class ComentariosProcessos extends CadastroProcesso {
     public void carregarDados() {
 
         for (int i = 0; i < 5; i++) {
-            comentariosProcessos.add(new ComentariosProcessos());
+            comentariosProcessos.add(new ComentariosProcessos(0, 0, "", "",
+                "", "", "", "", "", "",
+                0, null, "", "", "", "",
+                "", "", "", ""));
             if (comentariosProcessos.get(i).numProcesso == 0) {
                 adicionarComentario(i, i, "", "",
                         i + "/" + i + i + "/" + i + i + i + i, "", "", "", "", "", i);
