@@ -10,8 +10,16 @@ public class Themis {
             Scanner teclado = new Scanner(System.in);
             CadastroProcesso cadastrar;
             AgendarAudiencia agendar;
-            ComentariosProcessos comentario = new ComentariosProcessos();
-            FinalizarProcesso finalizarProcesso = new FinalizarProcesso();
+            ComentariosProcessos comentario = new ComentariosProcessos(0, 0, "", "",
+                "", "", "", "", "", "",
+                0, null, "", "", "", "",
+                "", "", "", "");
+            FinalizarProcesso finalizarProcesso = new FinalizarProcesso(0, 0, 0,
+                    "", "", "", "", "", "", "", "",
+                    "", "", false, false, 0, 0,
+                    "", "", "", "", "", "", "",
+                    "", 0, "", "", "", "",
+                    "", "", "", "", "");
             
 
             System.out.println("Bem vindo! Escolha uma das opções!");
