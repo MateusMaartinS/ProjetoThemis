@@ -8,8 +8,8 @@ import java.util.*;
 
 /**
  *
- * @author Analista Victor, Desenvolvedor Matheus Martins
- * Desenvolvedor Atual: Victor Fagundes Ramos
+ * @author Analista Victor, Desenvolvedor Matheus Martins Desenvolvedor Atual:
+ * Victor Fagundes Ramos
  */
 public class CadastroProcesso {
 
@@ -46,7 +46,7 @@ public class CadastroProcesso {
         } else {
             System.out.println("Processo não encontrado");
         }
-        
+
     }
 
     public int getNumProcesso() {
