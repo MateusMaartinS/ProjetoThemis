@@ -8,10 +8,14 @@ import java.util.*;
 
 /**
  *
- * @author Analista Victor, Desenvolvedor Matheus Martins Desenvolvedor Atual:
- * Victor Fagundes Ramos
+ * @author Analista Victor, Desenvolvedor Matheus Martins
+ * Desenvolvedor Atual: Victor Fagundes Ramos
  */
 public class CadastroProcesso {
+    
+    Scanner Ler = new Scanner(System.in);
+    
+     List<CadastroProcesso> cadastroProcesso = new ArrayList<>();
 
     private int numProcesso;
     private String assunto;
@@ -24,7 +28,8 @@ public class CadastroProcesso {
     public String categoria;
     public String orgaoJudicial;
 
-    public CadastroProcesso(int pNumProcesso, String pAssunto, String pNomeEmpregador, String pNomeAdvogado, String pStatus, String pDataCadastro, String pTribunal, String pVara, String pCategoria, String pOrgaoJudicial) {
+    public CadastroProcesso(int pNumProcesso, String pAssunto, String pNomeEmpregador, String pNomeAdvogado,
+            String pStatus, String pDataCadastro, String pTribunal, String pVara, String pCategoria, String pOrgaoJudicial) {
         this.numProcesso = pNumProcesso;
         this.assunto = pAssunto;
         this.nomeEmpregador = pNomeEmpregador;
@@ -35,18 +40,135 @@ public class CadastroProcesso {
         this.categoria = pCategoria;
         this.orgaoJudicial = pOrgaoJudicial;
     }
+    
+    
+    public void menuCadastroProcesso() {
+        int opcaoMenu = -1;
 
-    public void verificarDados(int pNumProcesso) {
-        if (this.numProcesso == pNumProcesso) {
-            System.out.println(String.format("Seu Processo numero %d foi cadastrado no dia: %s", numProcesso, dataCadastro));
-            System.out.println(String.format("O local do processo foi cadastrado no tribunal %s na vara %s no Órgão Judicial %s ", tribunal, vara, orgaoJudicial));
-            System.out.println(String.format("O cliente %s será defendido pelo advogado %s", nomeEmpregador, nomeAdvogado));
-            System.out.println(String.format("O status do Processo é %s", status));
+        while (opcaoMenu != 0) {
+            System.out.println("=============MENU==============");
+            System.out.println("====CADASTRO DE PROCESSO====");
+            System.out.println("TAMANHO DA LISTA > " + cadastroProcesso.size());
+            System.out.println("===============================");
 
-        } else {
-            System.out.println("Processo não encontrado");
+            System.out.println("[1] CADASTRAR PROCESSO");
+            System.out.println("[2] VERIFICAR DADOS");
+            System.out.println("[0] SAIR");
+
+            int opcao = Ler.nextInt();
+            switch (opcao) {
+
+                case 1:
+
+                    cadastrarProcesso();
+                    break;
+
+                case 2:
+
+                    verificarDados();
+
+                    break;
+
+                case 0:
+
+                    opcaoMenu = 0;
+                    break;
+            }
         }
 
+    }
+    
+    public void cadastrarProcesso() {
+        cadastroProcesso.add(new CadastroProcesso(numProcesso, assunto, nomeEmpregador, nomeAdvogado, status, dataCadastro, tribunal, vara, categoria, orgaoJudicial));
+
+        for (int i = 0; i < cadastroProcesso.size(); i++) {
+            if (cadastroProcesso.get(i).numProcesso == 0) {
+                System.out.println("=====QUANTOS PROCESSOS JA FORAM CADASTRADOS: " + cadastroProcesso.size() + "=====");
+
+                System.out.println("NÚMERO DO PROCESSO ?");
+                cadastroProcesso.get(i).numProcesso = Ler.nextInt();
+
+                System.out.println("ASSUNTO : ");
+                cadastroProcesso.get(i).assunto = Ler.next();
+
+                System.out.println("NOME DO EMPREGADOR : ");
+                cadastroProcesso.get(i).nomeEmpregador = Ler.next();
+
+                System.out.println("NOME DO ADVOGADO : ");
+                cadastroProcesso.get(i).nomeAdvogado = Ler.next();
+
+                System.out.println("STATUS : ");
+                cadastroProcesso.get(i).status = Ler.next();
+
+                System.out.println("DATA DE CADASTRADO : ");
+                cadastroProcesso.get(i).dataCadastro = Ler.next();
+
+                System.out.println("TRIBUNAL : ");
+                cadastroProcesso.get(i).tribunal = Ler.next();
+
+                System.out.println("VARA : ");
+                cadastroProcesso.get(i).vara = Ler.next();
+
+                System.out.println("CATEGORIA : ");
+                cadastroProcesso.get(i).categoria = Ler.next();
+
+                System.out.println("ORGÃO JUDICIAL : ");
+                cadastroProcesso.get(i).orgaoJudicial = Ler.next();
+
+                i = cadastroProcesso.size();
+                break;
+            }
+
+        }
+
+    }
+    
+    //OVERLOAD
+    public void cadastrarProcesso(int pNumProcesso, String pAssunto, String pNomeEmpregador, String pNomeAdvogado, String pStatus, String pDataCadastro,
+            String pTribunal, String pVara, String pCategoria, String pOrgaoJudicial, int i) {
+
+        cadastroProcesso.get(i).numProcesso = pNumProcesso;
+
+        cadastroProcesso.get(i).assunto = pAssunto;
+
+        cadastroProcesso.get(i).nomeEmpregador = pNomeEmpregador;
+
+        cadastroProcesso.get(i).nomeAdvogado = pNomeAdvogado;
+
+        cadastroProcesso.get(i).status = pStatus;
+
+        cadastroProcesso.get(i).dataCadastro = pDataCadastro;
+
+        cadastroProcesso.get(i).tribunal = pTribunal;
+
+        cadastroProcesso.get(i).vara = pVara;
+
+        cadastroProcesso.get(i).categoria = pCategoria;
+
+        cadastroProcesso.get(i).orgaoJudicial = pOrgaoJudicial;
+    }
+
+
+    public void verificarDados() {
+        
+    System.out.println("INFORME O NUMERO DO PROCESSO QUE QUER VERIFICAR");
+        int valor = Ler.nextInt();
+
+        for (int i = 0; i < cadastroProcesso.size(); i++) {
+            if (cadastroProcesso.get(i).numProcesso == valor) {
+                System.out.println("VERIFICANDO INFORMAÇÕES DA POSIÇÃO " + i);
+                System.out.println("NUMERO PROCESSO : " + cadastroProcesso.get(i).numProcesso);
+                System.out.println("ASSUNTO : " + cadastroProcesso.get(i).assunto);
+                System.out.println("NOME DO EMPREGADOR : " + cadastroProcesso.get(i).nomeEmpregador);
+                System.out.println("NOME DO ADVOGADO : " + cadastroProcesso.get(i).nomeAdvogado);
+                System.out.println("STATUS : " + cadastroProcesso.get(i).status);
+                System.out.println("DATA DE CADASTRO :" + cadastroProcesso.get(i).dataCadastro);
+                System.out.println("TRIBUNAL :" + cadastroProcesso.get(i).tribunal);
+                System.out.println("VARA : " + cadastroProcesso.get(i).vara);
+                System.out.println("CATEGORIA : " + cadastroProcesso.get(i).categoria);
+                System.out.println("ORGÃO JUDICIAL : " + cadastroProcesso.get(i).orgaoJudicial);
+            }
+        }
     }
 
     public int getNumProcesso() {
