@@ -11,7 +11,7 @@ import java.util.*;
  * @author Renan Alves Peregrino Desenvolvedor, Felipe Koji Analista
  * Desenvolvedor Atual: Nathan Felipe Oestreich Graebin
  */
-public class ComentariosProcessos {
+public class ComentariosProcessos extends CadastroProcesso {
 
     List<ComentariosProcessos> comentariosProcessos = new ArrayList<>();
 
