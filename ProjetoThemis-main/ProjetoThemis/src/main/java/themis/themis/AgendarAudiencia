@@ -51,7 +51,7 @@ public class AgendarAudiencia {
         public void mostrarAudiencia(int pNumeroAudiencia) {
             for (AgendarAudiencia agendas : agendas){
                 if (this.numeroAudiencia == pNumeroAudiencia) {
-            System.out.println(String.format("SUA AUDIçENCIA NÚMERO %d ESTÁ MARCADA PARA A DATA: %s", numeroAudiencia, dataAudiencia));
+            System.out.println(String.format("SUA AUDIÊNCIA NÚMERO %d ESTÁ MARCADA PARA A DATA: %s", numeroAudiencia, dataAudiencia));
             System.out.println(String.format("O LOCAL DA SUA AUDIÊNCIA NO TRIBUNAL %s NA VARA %s NO ÓRGÃO JUDICIAL: %s ", tribunalJudiciario, varaJudiciaria, orgaoJudicial));
             System.out.println(String.format("O CLEINTE %s SERÁ DFENDIDO PELO ADVOGADO: %s", nomeEmpregador, nomeAdvogado));
             System.out.println(String.format("O STATUS DA AUDIÊNCIA É %s", statusAudiencia));
