@@ -85,34 +85,34 @@ public class CadastroProcesso {
             if (cadastroProcesso.get(i).numProcesso == 0) {
                 System.out.println("=====QUANTOS PROCESSOS JA FORAM CADASTRADOS: " + cadastroProcesso.size() + "=====");
 
-                System.out.println("NÚMERO DO PROCESSO ?");
+                System.out.println("NÚMERO DO PROCESSO: ");
                 cadastroProcesso.get(i).numProcesso = Ler.nextInt();
 
-                System.out.println("ASSUNTO : ");
+                System.out.println("ASSUNTO: ");
                 cadastroProcesso.get(i).assunto = Ler.next();
 
-                System.out.println("NOME DO EMPREGADOR : ");
+                System.out.println("NOME DO EMPREGADOR: ");
                 cadastroProcesso.get(i).nomeEmpregador = Ler.next();
 
-                System.out.println("NOME DO ADVOGADO : ");
+                System.out.println("NOME DO ADVOGADO: ");
                 cadastroProcesso.get(i).nomeAdvogado = Ler.next();
 
-                System.out.println("STATUS : ");
+                System.out.println("STATUS: ");
                 cadastroProcesso.get(i).status = Ler.next();
 
-                System.out.println("DATA DE CADASTRADO : ");
+                System.out.println("DATA DE CADASTRADO: ");
                 cadastroProcesso.get(i).dataCadastro = Ler.next();
 
-                System.out.println("TRIBUNAL : ");
+                System.out.println("TRIBUNAL: ");
                 cadastroProcesso.get(i).tribunal = Ler.next();
 
-                System.out.println("VARA : ");
+                System.out.println("VARA: ");
                 cadastroProcesso.get(i).vara = Ler.next();
 
-                System.out.println("CATEGORIA : ");
+                System.out.println("CATEGORIA: ");
                 cadastroProcesso.get(i).categoria = Ler.next();
 
-                System.out.println("ORGÃO JUDICIAL : ");
+                System.out.println("ORGÃO JUDICIAL: ");
                 cadastroProcesso.get(i).orgaoJudicial = Ler.next();
                 
                 break;
@@ -156,16 +156,16 @@ public class CadastroProcesso {
         for (int i = 0; i < cadastroProcesso.size(); i++) {
             if (cadastroProcesso.get(i).numProcesso == valor) {
                 System.out.println("VERIFICANDO INFORMAÇÕES DA POSIÇÃO " + i);
-                System.out.println("NUMERO PROCESSO : " + cadastroProcesso.get(i).numProcesso);
-                System.out.println("ASSUNTO : " + cadastroProcesso.get(i).assunto);
-                System.out.println("NOME DO EMPREGADOR : " + cadastroProcesso.get(i).nomeEmpregador);
-                System.out.println("NOME DO ADVOGADO : " + cadastroProcesso.get(i).nomeAdvogado);
-                System.out.println("STATUS : " + cadastroProcesso.get(i).status);
-                System.out.println("DATA DE CADASTRO :" + cadastroProcesso.get(i).dataCadastro);
-                System.out.println("TRIBUNAL :" + cadastroProcesso.get(i).tribunal);
-                System.out.println("VARA : " + cadastroProcesso.get(i).vara);
-                System.out.println("CATEGORIA : " + cadastroProcesso.get(i).categoria);
-                System.out.println("ORGÃO JUDICIAL : " + cadastroProcesso.get(i).orgaoJudicial);
+                System.out.println("NUMERO PROCESSO: " + cadastroProcesso.get(i).numProcesso);
+                System.out.println("ASSUNTO: " + cadastroProcesso.get(i).assunto);
+                System.out.println("NOME DO EMPREGADOR: " + cadastroProcesso.get(i).nomeEmpregador);
+                System.out.println("NOME DO ADVOGADO: " + cadastroProcesso.get(i).nomeAdvogado);
+                System.out.println("STATUS: " + cadastroProcesso.get(i).status);
+                System.out.println("DATA DE CADASTRO: " + cadastroProcesso.get(i).dataCadastro);
+                System.out.println("TRIBUNAL: " + cadastroProcesso.get(i).tribunal);
+                System.out.println("VARA: " + cadastroProcesso.get(i).vara);
+                System.out.println("CATEGORIA: " + cadastroProcesso.get(i).categoria);
+                System.out.println("ORGÃO JUDICIAL: " + cadastroProcesso.get(i).orgaoJudicial);
             }
         }
     }
