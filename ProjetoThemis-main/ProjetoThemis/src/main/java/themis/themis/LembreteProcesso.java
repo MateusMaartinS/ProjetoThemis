@@ -1,4 +1,4 @@
-package themis.themis;
+package themis;
 import java.util.*;
 //Analista: Fernanda Hallman
 //Desenvolvedor Criador: Mateus Soares
@@ -18,7 +18,7 @@ public class LembreteProcesso {
         public String decisao;
         public String orgaoJudicial;
         ArrayList<LembreteProcesso> lembretes = new ArrayList<>();
-    //Constructor
+    //CONSTRUCTOR
         public LembreteProcesso(int pNumProcesso, int pNumAudiencia, int pNumLembrete, String pDataAudiencia, String pTribunal, String pVara,
                 String pNomeEmpregador, String pNomeAdvogado, String pCategoria, String pAssunto, String pStatus) {
             this.numProcesso = pNumProcesso;
@@ -33,17 +33,17 @@ public class LembreteProcesso {
             this.assunto = pAssunto;
             this.status = pStatus;
         }
-    //Metodos
+    //METODOS
         public void verificarData(int pNumLembrete) {
         if (lembretes.isEmpty()) {
-                System.out.println("Nenhum lembrete encontrado.");
+                System.out.println("NENHUM LEMBRETE ENCONTRADO.");
         }else{ 
             for (LembreteProcesso lembrete : lembretes) {   
                 if (lembrete.numLembrete == pNumLembrete) { 
-                System.out.println("Seu proceso numero "+ lembrete.numAudiencia +" está marcada para data: " +lembrete.dataAudiencia);
-                System.out.println("O local da sua audiência no tribunal "+ lembrete.tribunal +" na vara "+ lembrete.vara +" no Órgão Judicial " + lembrete.orgaoJudicial);
-                System.out.println("O cliente "+ lembrete.nomeEmpregador +" será defendido pelo advogado "+ lembrete.nomeAdvogado);
-                System.out.println("O status da audiência é "+ lembrete.status);
+                System.out.println("SEU PROCESSO NÚMERO  "+ lembrete.numAudiencia +" ESTÁ MARCADA PARA A DATA: " +lembrete.dataAudiencia);
+                System.out.println("O LOCAL DA SUA AUDIÊNCIA NO TRIBUNAL "+ lembrete.tribunal +" NA VARA "+ lembrete.vara +" NO ÓRGÃO JUDICIAL " + lembrete.orgaoJudicial);
+                System.out.println("O CLIENTE "+ lembrete.nomeEmpregador +" SERÁ DEFENDIDO PELO ADVOGADO "+ lembrete.nomeAdvogado);
+                System.out.println("O STATUS DA AUDIÊNCIA É "+ lembrete.status);
                 }
             }
         }
@@ -58,49 +58,49 @@ public class LembreteProcesso {
         public void mostrarLembrete(int pNumLembrete) {
             for (LembreteProcesso lembrete : lembretes) {
                 if (lembrete.numLembrete == pNumLembrete) {
-                    System.out.println("Número do Processo: " + lembrete.numProcesso);
-                    System.out.println("Número da Audiência: " + lembrete.numAudiencia);
-                    System.out.println("Número do Lembrete: " + lembrete.numLembrete);
-                    System.out.println("Data da Audiência: " + lembrete.dataAudiencia);
-                    System.out.println("Tribunal: " + lembrete.tribunal);
-                    System.out.println("Vara: " + lembrete.vara);
-                    System.out.println("Nome do Empregador: " + lembrete.nomeEmpregador);
-                    System.out.println("Nome do Advogado: " + lembrete.nomeAdvogado);
-                    System.out.println("Categoria: " + lembrete.categoria);
-                    System.out.println("Assunto: " + lembrete.assunto);
-                    System.out.println("Status: " + lembrete.status);
-                    System.out.println("Decisão: " + lembrete.decisao);
-                    System.out.println("Órgão Judicial: " + lembrete.orgaoJudicial);
+                    System.out.println("NÚMERO DO PROCESSO: " + lembrete.numProcesso);
+                    System.out.println("NÚMERO DA AUDIÊNCIA: " + lembrete.numAudiencia);
+                    System.out.println("NÚMERO DO LEMBRETE: " + lembrete.numLembrete);
+                    System.out.println("DATA DA AUDIÊNCIA: " + lembrete.dataAudiencia);
+                    System.out.println("TRIBUNAL: " + lembrete.tribunal);
+                    System.out.println("VARA: " + lembrete.vara);
+                    System.out.println("NOME DO EMPREGADOR: " + lembrete.nomeEmpregador);
+                    System.out.println("NOME DO ADVOGADO: " + lembrete.nomeAdvogado);
+                    System.out.println("CATEGORIA: " + lembrete.categoria);
+                    System.out.println("ASSUNTO: " + lembrete.assunto);
+                    System.out.println("STATUS: " + lembrete.status);
+                    System.out.println("DECISÃO: " + lembrete.decisao);
+                    System.out.println("ÓRGÃO JUDICIAL: " + lembrete.orgaoJudicial);
                     System.out.println("-----------------------------------");
                     return;
                 }
             }
-            System.out.println("Lembrete não encontrado!");
+            System.out.println("LEMBRETE NÃO ENCONTRADO!");
         }
-    //Overload
+    //OVERLOAD
         public void mostrarLembrete() {
             if (lembretes.isEmpty()) {
-                System.out.println("Nenhum lembrete encontrado.");
+                System.out.println("NENHUM LEMBRETE ENCONTRADO.");
                 return;
             }
             for (LembreteProcesso lembrete : lembretes) {
-                System.out.println("Número do Processo: " + lembrete.numProcesso);
-                System.out.println("Número da Audiência: " + lembrete.numAudiencia);
-                System.out.println("Número do Lembrete: " + lembrete.numLembrete);
-                System.out.println("Data da Audiência: " + lembrete.dataAudiencia);
-                System.out.println("Tribunal: " + lembrete.tribunal);
-                System.out.println("Vara: " + lembrete.vara);
-                System.out.println("Nome do Empregador: " + lembrete.nomeEmpregador);
-                System.out.println("Nome do Advogado: " + lembrete.nomeAdvogado);
-                System.out.println("Categoria: " + lembrete.categoria);
-                System.out.println("Assunto: " + lembrete.assunto);
-                System.out.println("Status: " + lembrete.status);
-                System.out.println("Decisão: " + lembrete.decisao);
-                System.out.println("Órgão Judicial: " + lembrete.orgaoJudicial);
-                System.out.println("-----------------------------------");
-            }
+                    System.out.println("NÚMERO DO PROCESSO: " + lembrete.numProcesso);
+                    System.out.println("NÚMERO DA AUDIÊNCIA: " + lembrete.numAudiencia);
+                    System.out.println("NÚMERO DO LEMBRETE: " + lembrete.numLembrete);
+                    System.out.println("DATA DA AUDIÊNCIA: " + lembrete.dataAudiencia);
+                    System.out.println("TRIBUNAL: " + lembrete.tribunal);
+                    System.out.println("VARA: " + lembrete.vara);
+                    System.out.println("NOME DO EMPREGADOR: " + lembrete.nomeEmpregador);
+                    System.out.println("NOME DO ADVOGADO: " + lembrete.nomeAdvogado);
+                    System.out.println("CATEGORIA: " + lembrete.categoria);
+                    System.out.println("ASSUNTO: " + lembrete.assunto);
+                    System.out.println("STATUS: " + lembrete.status);
+                    System.out.println("DECISÃO: " + lembrete.decisao);
+                    System.out.println("ÓRGÃO JUDICIAL: " + lembrete.orgaoJudicial);
+                    System.out.println("-----------------------------------");
+             }
         }
-    //Getters and Setters
+    //GETTERS AND SETTERS
         public int getNumProcesso() {
             return this.numProcesso;
         }
@@ -120,3 +120,4 @@ public class LembreteProcesso {
             this.numLembrete = pLembrete;
         }
 }
+
