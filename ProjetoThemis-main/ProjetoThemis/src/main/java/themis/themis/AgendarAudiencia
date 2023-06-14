@@ -37,11 +37,11 @@ public class AgendarAudiencia {
     }
         public void tomarDecisao(int pNumeroAudiencia){
             if (this.decisaoAudiencia.equals("0")) {
-                System.out.println("A decisão ainda não foi tomada!");
+                System.out.println("A DECISÃO AINDA NÃO FOI TOMADA!");
             } else {
-                System.out.println(String.format("A decisão da audiência foi %s ", decisaoAudiencia));
+                System.out.println(String.format("A DECISÃO DA AUDIÊNCIA FOI: %s ", decisaoAudiencia));
             }
-                System.out.println("Audiencia não encontrada!");     
+                System.out.println("AUDIÊNCIA NÃO ENCONTRADA!");     
     }    
        public void gerarAudiencia(int pNumeroAudiencia, String pDataAudiencia, String pTribunal, String pVara, String pOrgaoJudicial, String pNomeEmpregador,String pNomeAdvogado, String pStatus){
          AgendarAudiencia agenda = new AgendarAudiencia(pNumeroAudiencia, pNumeroAudiencia, pDataAudiencia, pTribunal, pVara, pOrgaoJudicial, pNomeEmpregador, pNomeAdvogado, pStatus);  
@@ -51,26 +51,26 @@ public class AgendarAudiencia {
         public void mostrarAudiencia(int pNumeroAudiencia) {
             for (AgendarAudiencia agendas : agendas){
                 if (this.numeroAudiencia == pNumeroAudiencia) {
-            System.out.println(String.format("Sua Audiência numero %d está marcada para data: %s", numeroAudiencia, dataAudiencia));
-            System.out.println(String.format("O local da sua audiência no tribunal %s na vara %s no Órgão Judicial %s ", tribunalJudiciario, varaJudiciaria, orgaoJudicial));
-            System.out.println(String.format("O cliente %s será defendido pelo advogado %s", nomeEmpregador, nomeAdvogado));
-            System.out.println(String.format("O status da audiência é %s", statusAudiencia));
+            System.out.println(String.format("SUA AUDIçENCIA NÚMERO %d ESTÁ MARCADA PARA A DATA: %s", numeroAudiencia, dataAudiencia));
+            System.out.println(String.format("O LOCAL DA SUA AUDIÊNCIA NO TRIBUNAL %s NA VARA %s NO ÓRGÃO JUDICIAL: %s ", tribunalJudiciario, varaJudiciaria, orgaoJudicial));
+            System.out.println(String.format("O CLEINTE %s SERÁ DFENDIDO PELO ADVOGADO: %s", nomeEmpregador, nomeAdvogado));
+            System.out.println(String.format("O STATUS DA AUDIÊNCIA É %s", statusAudiencia));
             return;
         }
       }
-            System.out.println("Não foi encontrado nenhuma audiência!");
+            System.out.println("NÃO FOI ENCONTRADO NENHUMA AUDIÊNCIA!");
     }      
         //Overload
         public void mostrarAudiencia() {
             if (agendas.isEmpty()){
-                System.out.println("Nenhuma agenda encontrada!");
+                System.out.println("NENHUMA AGENDA ENCONTRADA!");
                 return;
             }
             for (AgendarAudiencia agendas : agendas){
-            System.out.println(String.format("Sua Audiência numero %d está marcada para data: %s", numeroAudiencia, dataAudiencia));
-            System.out.println(String.format("O local da sua audiência no tribunal %s na vara %s no Órgão Judicial %s ", tribunalJudiciario, varaJudiciaria, orgaoJudicial));
-            System.out.println(String.format("O cliente %s será defendido pelo advogado %s", nomeEmpregador, nomeAdvogado));
-            System.out.println(String.format("O status da audiência é %s", statusAudiencia));
+            System.out.println(String.format("SUA AUDIÊNCIA NÚMERO %d ESTÁ MARCADA PARA A DATA: %s", numeroAudiencia, dataAudiencia));
+            System.out.println(String.format("O LOCAL DA SUA AUDIÊNCIA NO TRIBUNAL %s NA VARA %s NO ÓRGÃO JUDICIAL: %s ", tribunalJudiciario, varaJudiciaria, orgaoJudicial));
+            System.out.println(String.format("O CLIENTE %s SERÁ DEFENDIDO PELO ADVOGADO: %s", nomeEmpregador, nomeAdvogado));
+            System.out.println(String.format("O STATUS DA AUDIÊNCIA É: %s", statusAudiencia));
         }
     }      
     public void setDecisao(String aDecisao){
