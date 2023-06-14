@@ -114,8 +114,7 @@ public class CadastroProcesso {
 
                 System.out.println("ORGÃO JUDICIAL : ");
                 cadastroProcesso.get(i).orgaoJudicial = Ler.next();
-
-                i = cadastroProcesso.size();
+                
                 break;
             }
 
