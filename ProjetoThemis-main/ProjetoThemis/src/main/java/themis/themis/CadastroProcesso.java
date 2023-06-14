@@ -211,4 +211,26 @@ public class CadastroProcesso {
         return orgaoJudicial;
     }
 
+    public void setCadastroProcesso(List<CadastroProcesso> cadastroProcesso) {
+        this.cadastroProcesso = cadastroProcesso;
+    }
+
+    public void setNumProcesso(int numProcesso) {
+        this.numProcesso = numProcesso;
+    }
+
+    public void setAssunto(String assunto) {
+        this.assunto = assunto;
+    }
+
+    public void setNomeEmpregador(String nomeEmpregador) {
+        this.nomeEmpregador = nomeEmpregador;
+    }
+
+    public void setNomeAdvogado(String nomeAdvogado) {
+        this.nomeAdvogado = nomeAdvogado;
+    }
+
+    
+    
 }

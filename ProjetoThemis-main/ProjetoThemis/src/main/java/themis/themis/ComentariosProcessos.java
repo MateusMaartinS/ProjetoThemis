@@ -16,36 +16,23 @@ public class ComentariosProcessos extends CadastroProcesso {
     List<ComentariosProcessos> comentariosProcessos = new ArrayList<>();
 
     Scanner Ler = new Scanner(System.in);
-
     private int numAudiencia;
-    private int numProcesso;
-    private String assunto;
-    private String nomeEmpregador;
-    public String dataAudiencia;
-    public String tribunal;
-    public String vara;
-    public String categoria;
-
-    public String comentarios;
-    public String dataComentario;
-
-    public ComentariosProcessos(int numAudiencia, int numProcesso, String assunto, String nomeEmpregador, String dataAudiencia, String tribunal, String vara, String categoria, String comentarios, String dataComentario, int pNumProcesso, String pAssunto, String pNomeEmpregador, String pNomeAdvogado, String pStatus, String pDataCadastro, String pTribunal, String pVara, String pCategoria, String pOrgaoJudicial) {
+    private String dataAudiencia;
+    private String comentarios;
+    private String dataComentario;
+    
+    public ComentariosProcessos(int numAudiencia,String dataAudiencia,String comentarios,String dataComentario, int pNumProcesso, String pAssunto, String pNomeEmpregador, String pNomeAdvogado,
+            String pStatus, String pDataCadastro, String pTribunal, String pVara, String pCategoria, String pOrgaoJudicial) {
         super(pNumProcesso, pAssunto, pNomeEmpregador, pNomeAdvogado, pStatus, pDataCadastro, pTribunal, pVara, pCategoria, pOrgaoJudicial);
         this.numAudiencia = numAudiencia;
-        this.numProcesso = numProcesso;
-        this.assunto = assunto;
-        this.nomeEmpregador = nomeEmpregador;
         this.dataAudiencia = dataAudiencia;
-        this.tribunal = tribunal;
-        this.vara = vara;
-        this.categoria = categoria;
         this.comentarios = comentarios;
         this.dataComentario = dataComentario;
+
     }
 
-    
-
     //Metodos
+    
     public void menuComentariosProcessos() {
         int opcaoMenu = -1;
 
@@ -80,13 +67,13 @@ public class ComentariosProcessos extends CadastroProcesso {
 
                 case 3:
 
-                    verComentariosProcesso();
+                    verProcessos();
 
                     break;
 
                 case 4:
 
-                    verTodosProcessos();
+                    verProcessos("iniciar");
                     break;
                 case 9:
 
@@ -103,45 +90,31 @@ public class ComentariosProcessos extends CadastroProcesso {
     }
 
     public void adicionarComentario() {
-        comentariosProcessos.add(new ComentariosProcessos(0, 0, "", "",
-                "", "", "", "", "", "",
-                0, null, "", "", "", "",
-                "", "", "", ""));
-
+        criarComentarioVazio();
+        
         for (int i = 0; i < comentariosProcessos.size(); i++) {
-            if (comentariosProcessos.get(i).numProcesso == 0) {
+            if (comentariosProcessos.get(i).getNumProcesso() == 0) {
                 System.out.println("=====QUANTOS COMENTARIO JA FORAM FEITOS: " + comentariosProcessos.size() + "=====");
-
                 System.out.println("EM QUAL PROCESSO VOCÊ QUER COMENTAR ?");
-                comentariosProcessos.get(i).numProcesso = Ler.nextInt();
-
+                comentariosProcessos.get(i).setNumProcesso(Ler.nextInt());
                 System.out.println("COM AUDIÊNCIA : ");
-                comentariosProcessos.get(i).numAudiencia = Ler.nextInt();
-
+                comentariosProcessos.get(i).setNumAudiencia(Ler.nextInt());
                 System.out.println("COM A DATA PARA : ");
-                comentariosProcessos.get(i).dataAudiencia = Ler.next();
-
+                comentariosProcessos.get(i).setDataAudiencia(Ler.next());
                 System.out.println("DO TRIBUNAL : ");
                 comentariosProcessos.get(i).tribunal = Ler.next();
-
                 System.out.println("DA VARA : ");
                 comentariosProcessos.get(i).vara = Ler.next();
-
                 System.out.println("ASSUNTO : ");
-                comentariosProcessos.get(i).assunto = Ler.next();
-
+                comentariosProcessos.get(i).setAssunto(Ler.next());
                 System.out.println("DO EMPREGADOR : ");
-                comentariosProcessos.get(i).nomeEmpregador = Ler.next();
-
+                comentariosProcessos.get(i).setNomeEmpregador(Ler.next());
                 System.out.println("COMENTARIO : ");
-                comentariosProcessos.get(i).comentarios = Ler.next();
-
+                comentariosProcessos.get(i).setComentarios(Ler.next());
                 System.out.println("DATA DO COMENTARIO : ");
-                comentariosProcessos.get(i).dataComentario = Ler.next();
-
+                comentariosProcessos.get(i).setDataComentario(Ler.next());
                 System.out.println("DA CATEGORIA : ");
                 comentariosProcessos.get(i).categoria = Ler.next();
-
                 i = comentariosProcessos.size();
                 break;
 
@@ -152,43 +125,37 @@ public class ComentariosProcessos extends CadastroProcesso {
     }
 
     //Overload
-    public void adicionarComentario(int pNumAudiencia, int pNumProcesso, String pAssunto, String pNomeEmpregador,
-            String pDataAudiencia, String pTribunal, String pVara, String pCategoria, String pComentarios,
-            String pDataComentario, int i) {
+    public void adicionarComentario(int numAudiencia,String dataAudiencia,String comentarios,String dataComentario, int pNumProcesso, String pAssunto, String pNomeEmpregador, String pNomeAdvogado,
+            String pStatus, String pDataCadastro, String pTribunal, String pVara, String pCategoria, String pOrgaoJudicial, int i) {
 
-        comentariosProcessos.get(i).numProcesso = pNumProcesso;
-
-        comentariosProcessos.get(i).numAudiencia = pNumAudiencia;
-
-        comentariosProcessos.get(i).dataAudiencia = pDataAudiencia;
-
+        comentariosProcessos.get(i).setNumAudiencia(numAudiencia);
+        comentariosProcessos.get(i).setDataAudiencia(dataAudiencia);       
+        comentariosProcessos.get(i).setComentarios(comentarios);       
+        comentariosProcessos.get(i).setDataComentario(dataComentario);        
+        comentariosProcessos.get(i).setNumProcesso(pNumProcesso);
+        comentariosProcessos.get(i).setAssunto(pAssunto);        
+        comentariosProcessos.get(i).setNomeEmpregador(pNomeEmpregador);       
+        comentariosProcessos.get(i).setNomeAdvogado(pNomeAdvogado);        
+        comentariosProcessos.get(i).status= pStatus ;       
+        comentariosProcessos.get(i).dataCadastro = pDataCadastro;       
         comentariosProcessos.get(i).tribunal = pTribunal;
-
-        comentariosProcessos.get(i).vara = pVara;
-
-        comentariosProcessos.get(i).assunto = pAssunto;
-
-        comentariosProcessos.get(i).nomeEmpregador = pNomeEmpregador;
-
-        comentariosProcessos.get(i).comentarios = pComentarios;
-
-        comentariosProcessos.get(i).dataComentario = pDataComentario;
-
+        comentariosProcessos.get(i).vara = pVara;       
         comentariosProcessos.get(i).categoria = pCategoria;
-
     }
 
     public void apagarComentario() {
 
         System.out.println("INFORME O NUMERO DO PROCESSO PARA DELETAR O COMENTARIO");
-        int valor = Ler.nextInt();
+        int index = Ler.nextInt();
 
         for (int i = 0; i < comentariosProcessos.size(); i++) {
-
-            if (comentariosProcessos.get(i).numProcesso == valor) {
-
-                comentariosProcessos.remove(valor);
-
+            
+            if (comentariosProcessos.get(i).getNumProcesso() == index) {
+                
+                
+                
+                comentariosProcessos.remove(index);
+                System.out.println("TAMANHO DA LISTA ATUAL >DEPOIS< DE DELETAR :" + comentariosProcessos.size());
                 i = comentariosProcessos.size();
 
             }
@@ -196,42 +163,43 @@ public class ComentariosProcessos extends CadastroProcesso {
         }
     }
 
-    public void verComentariosProcesso() {
+    public void verProcessos() {
 
         System.out.println("INFORME O NUMERO DO PROCESSO QUE QUER VERIFICAR");
         int valor = Ler.nextInt();
 
         for (int i = 0; i < comentariosProcessos.size(); i++) {
-            if (comentariosProcessos.get(i).numProcesso == valor) {
+            if (comentariosProcessos.get(i).getNumProcesso() == valor) {
                 System.out.println("VERIFICANDO INFORMAÇÕES DA POSIÇÃO " + i);
-                System.out.println("NUMERO PROCESSO : " + comentariosProcessos.get(i).numProcesso);
-                System.out.println("NUMERO AUDIENCIA : " + comentariosProcessos.get(i).numProcesso);
-                System.out.println("DATA AUDIENCIA : " + comentariosProcessos.get(i).dataAudiencia);
+                System.out.println("NUMERO PROCESSO : " + comentariosProcessos.get(i).getNumProcesso());
+                System.out.println("NUMERO AUDIENCIA : " + comentariosProcessos.get(i).numAudiencia);
+                System.out.println("DATA AUDIENCIA : " + comentariosProcessos.get(i).getDataAudiencia());
                 System.out.println("TRIBUNAL : " + comentariosProcessos.get(i).tribunal);
                 System.out.println("VARA : " + comentariosProcessos.get(i).vara);
-                System.out.println("ASSUNTO :" + comentariosProcessos.get(i).assunto);
-                System.out.println("COMENTARIOS :" + comentariosProcessos.get(i).comentarios);
-                System.out.println("DATA DO COMENTARIO : " + comentariosProcessos.get(i).dataComentario);
-                System.out.println("NOME DO EMPREGADOR : " + comentariosProcessos.get(i).nomeEmpregador);
-                System.out.println("DA CATEGORIA : " + comentariosProcessos.get(i).categoria);
+                System.out.println("ASSUNTO :" + comentariosProcessos.get(i).getAssunto());
+                System.out.println("COMENTARIOS :" + comentariosProcessos.get(i).getComentarios());
+                System.out.println("DATA DO COMENTARIO : " + comentariosProcessos.get(i).getDataComentario());
+                System.out.println("NOME DO EMPREGADOR : " + comentariosProcessos.get(i).getNomeEmpregador());
+                System.out.println("DA CATEGORIA : " + comentariosProcessos.get(i).getCategoria());
             }
         }
 
     }
-
-    public void verTodosProcessos() {
+    
+    //Overload
+    public void verProcessos(String a) {
         for (int i = 0; i < comentariosProcessos.size(); i++) {
             System.out.println("VERIFICANDO INFORMAÇÕES DA POSIÇÃO " + i);
-            System.out.println("NUMERO PROCESSO : " + comentariosProcessos.get(i).numProcesso);
-            System.out.println("NUMERO AUDIENCIA : " + comentariosProcessos.get(i).numProcesso);
-            System.out.println("DATA AUDIENCIA : " + comentariosProcessos.get(i).dataAudiencia);
-            System.out.println("TRIBUNAL : " + comentariosProcessos.get(i).tribunal);
-            System.out.println("VARA : " + comentariosProcessos.get(i).vara);
-            System.out.println("ASSUNTO :" + comentariosProcessos.get(i).assunto);
-            System.out.println("COMENTARIOS :" + comentariosProcessos.get(i).comentarios);
-            System.out.println("DATA DO COMENTARIO : " + comentariosProcessos.get(i).dataComentario);
-            System.out.println("NOME DO EMPREGADOR : " + comentariosProcessos.get(i).nomeEmpregador);
-            System.out.println("DA CATEGORIA : " + comentariosProcessos.get(i).categoria);
+                System.out.println("NUMERO PROCESSO : " + comentariosProcessos.get(i).getNumProcesso());
+                System.out.println("NUMERO AUDIENCIA : " + comentariosProcessos.get(i).numAudiencia);
+                System.out.println("DATA AUDIENCIA : " + comentariosProcessos.get(i).getDataAudiencia());
+                System.out.println("TRIBUNAL : " + comentariosProcessos.get(i).tribunal);
+                System.out.println("VARA : " + comentariosProcessos.get(i).vara);
+                System.out.println("ASSUNTO :" + comentariosProcessos.get(i).getAssunto());
+                System.out.println("COMENTARIOS :" + comentariosProcessos.get(i).getComentarios());
+                System.out.println("DATA DO COMENTARIO : " + comentariosProcessos.get(i).getDataComentario());
+                System.out.println("NOME DO EMPREGADOR : " + comentariosProcessos.get(i).getNomeEmpregador());
+                System.out.println("DA CATEGORIA : " + comentariosProcessos.get(i).getCategoria());
             System.out.println("============================================");
         }
     }
@@ -239,21 +207,22 @@ public class ComentariosProcessos extends CadastroProcesso {
     public void carregarDados() {
 
         for (int i = 0; i < 5; i++) {
-            comentariosProcessos.add(new ComentariosProcessos(0, 0, "", "",
-                "", "", "", "", "", "",
-                0, null, "", "", "", "",
-                "", "", "", ""));
-            if (comentariosProcessos.get(i).numProcesso == 0) {
-                adicionarComentario(i, i, "", "",
-                        i + "/" + i + i + "/" + i + i + i + i, "", "", "", "", "", i);
+            criarComentarioVazio();
+            if (comentariosProcessos.get(i).getNumProcesso() == 0) {
+                adicionarComentario(i,""+i,""+i,""+i,i,""+i, ""+i,""+i,""+i,""+i, ""+i, ""+i, ""+i, ""+i, i);
 
             }
         }
         System.out.println("TODOS OS DADOS FORAM CARREGADOS");
 
     }
+    
+    public void criarComentarioVazio(){
+    comentariosProcessos.add(new ComentariosProcessos(0,"","","",0, "", "", "", "", "", "", "", "", ""));
 
+    }
     //Getters And Seters
+
     public int getNumAudiencia() {
         return numAudiencia;
     }
@@ -262,28 +231,29 @@ public class ComentariosProcessos extends CadastroProcesso {
         this.numAudiencia = numAudiencia;
     }
 
-    public int getNumProcesso() {
-        return numProcesso;
+    public String getDataAudiencia() {
+        return dataAudiencia;
     }
 
-    public void setNumProcesso(int numProcesso) {
-        this.numProcesso = numProcesso;
+    public void setDataAudiencia(String dataAudiencia) {
+        this.dataAudiencia = dataAudiencia;
     }
 
-    public String getAssunto() {
-        return assunto;
+    public String getComentarios() {
+        return comentarios;
     }
 
-    public void setAssunto(String assunto) {
-        this.assunto = assunto;
+    public void setComentarios(String comentarios) {
+        this.comentarios = comentarios;
     }
 
-    public String getNomeEmpregador() {
-        return nomeEmpregador;
+    public String getDataComentario() {
+        return dataComentario;
     }
 
-    public void setNomeEmpregador(String nomeEmpregador) {
-        this.nomeEmpregador = nomeEmpregador;
+    public void setDataComentario(String dataComentario) {
+        this.dataComentario = dataComentario;
     }
-
+    
+    
 }
