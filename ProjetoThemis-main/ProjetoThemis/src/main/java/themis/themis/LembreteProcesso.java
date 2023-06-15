@@ -1,4 +1,4 @@
-package themis;
+package themis.themis;
 import java.util.*;
 //Analista: Fernanda Hallman
 //Desenvolvedor Criador: Mateus Soares
