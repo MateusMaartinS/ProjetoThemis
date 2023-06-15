@@ -36,8 +36,7 @@ public class FinalizarProcesso extends ComentariosProcessos {
         while (opcaoMenu != 0) {
             System.out.println("=========================================");
             System.out.println("======== MENU FINALIZAR PROCESSO ========");
-            System.out.println("=====FINALIZADOS " + finalizarProcessos.size());
-
+            System.out.println("===== FINALIZADOS " + finalizarProcessos.size());
             System.out.println("[1] - CADASTRAR PROCESSO PARA FINALIZAR");
             System.out.println("[2] - GERAR REMUNERAÇÃO");
             System.out.println("[3] - GERAR SENTENÇA");
@@ -86,31 +85,28 @@ public class FinalizarProcesso extends ComentariosProcessos {
 
         for (int i = 0; i < finalizarProcessos.size(); i++) {
             if (finalizarProcessos.get(i).getNumProcesso() == 0) {
-                System.out.println("=====QUANTOS PROCESSOS FORAM FINALIZADOS" + finalizarProcessos.size() + "=====");
-                System.out.println("EM QUAL PROCESSO VOCÊ QUER COMENTAR ?");
+                System.out.println("===== QUANTOS PROCESSOS FORAM FINALIZADOS: " + finalizarProcessos.size() + " =====");
+                System.out.println("EM QUAL PROCESSO VOCÊ QUER COMENTAR: ");
                 finalizarProcessos.get(i).setNumProcesso(Ler.nextInt());
-                System.out.println("COM AUDIÊNCIA : ");
+                System.out.println("COM AUDIÊNCIA: ");
                 finalizarProcessos.get(i).setNumAudiencia(Ler.nextInt());
-                System.out.println("COM A DATA PARA : ");
+                System.out.println("COM A DATA PARA: ");
                 finalizarProcessos.get(i).setDataAudiencia(Ler.next());
-                System.out.println("DO TRIBUNAL : ");
+                System.out.println("DO TRIBUNAL: ");
                 finalizarProcessos.get(i).tribunal = Ler.next();
-                System.out.println("DA VARA : ");
+                System.out.println("DA VARA: ");
                 finalizarProcessos.get(i).vara = Ler.next();
-
-                System.out.println("DO EMPREGADOR : ");
+                System.out.println("DO EMPREGADOR: ");
                 finalizarProcessos.get(i).setNomeEmpregador(Ler.next());
-                System.out.println("COMENTARIO : ");
+                System.out.println("COMENTÁRIO: ");
                 finalizarProcessos.get(i).setComentarios(Ler.next());
-                System.out.println("DATA DO COMENTARIO : ");
+                System.out.println("DATA DO COMENTÁRIO: ");
                 finalizarProcessos.get(i).setDataComentario(Ler.next());
-                System.out.println("DA CATEGORIA : ");
+                System.out.println("DA CATEGORIA: ");
                 finalizarProcessos.get(i).categoria = Ler.next();
-
                 finalizarProcessos.get(i).setGerarRemuneracao(false);;
                 finalizarProcessos.get(i).setGerarSentenca(false);
-
-                System.out.println("O PROXIMO PASSO É GERAR REMUNERA E SENTENÇA");
+                System.out.println("O PRÓXIMO PASSO É GERAR REMUNERAÇÃO E SENTENÇA");
 
                 i = finalizarProcessos.size();
                 break;
@@ -122,9 +118,8 @@ public class FinalizarProcesso extends ComentariosProcessos {
     }
 
     public void gerarRemuneracao() {
-        System.out.println("INFORME O NUMERO DO PROCESSO");
+        System.out.println("INFORME O NÚMERO DO PROCESSO: ");
         int valor = Ler.nextInt();
-
         for (int i = 0; i < finalizarProcessos.size(); i++) {
             if (finalizarProcessos.get(i).getNumProcesso() == valor) {
 
@@ -133,11 +128,11 @@ public class FinalizarProcesso extends ComentariosProcessos {
                     finalizarProcessos.get(i).setRemuneracao(5.500);
 
                     finalizarProcessos.get(i).setGerarRemuneracao(true);
-                    System.out.println("REMUNERAÇÃO GERADA, VÁ PARA O PROXIMO PASSO");
+                    System.out.println("REMUNERAÇÃO GERADA, VÁ PARA O PRÓXIMO PASSO: ");
                     i = finalizarProcessos.size();
                     break;
                 } else {
-                    System.out.println("JÁ FOI GERADO UMA REMUNERAÇÃO, VÁ PARA O PROXIMO PASSO");
+                    System.out.println("JÁ FOI GERADO UMA REMUNERAÇÃO, VÁ PARA O PRÓXIMO PASSO");
                     break;
 
                 }
@@ -157,15 +152,15 @@ public class FinalizarProcesso extends ComentariosProcessos {
 
                 if (finalizarProcessos.get(i).isGerarSentenca() == false) {
                     System.out.println("DEFINA UMA SENTENÇA :");
-                    finalizarProcessos.get(i).setSentenca(Ler.next()); 
+                    finalizarProcessos.get(i).setSentenca(Ler.next());
 
                     finalizarProcessos.get(i).setGerarSentenca(true);
 
-                    System.out.println("SENTENÇA GERADA, VÁ PARA O PROXIMO PASSO");
+                    System.out.println("SENTENÇA GERADA, VÁ PARA O PRÓXIMO PASSO");
                     i = finalizarProcessos.size();
                     break;
                 } else {
-                    System.out.println("JÁ FOI GERADO UMA SENTENÇA, VÁ PARA O PROXIMO PASSO");
+                    System.out.println("JÁ FOI GERADO UMA SENTENÇA, VÁ PARA O PRÓXIMO PASSO");
                     break;
 
                 }
@@ -177,7 +172,7 @@ public class FinalizarProcesso extends ComentariosProcessos {
     }
 
     public void finalizarProcesso() {
-        System.out.println("INFORME O NUMERO DO PROCESSO");
+        System.out.println("INFORME O NÚMERO DO PROCESSO");
         int valor = Ler.nextInt();
 
         for (int i = 0; i < finalizarProcessos.size(); i++) {
@@ -192,7 +187,7 @@ public class FinalizarProcesso extends ComentariosProcessos {
                     }
                 }
             } else {
-                System.out.println("Para finalizar você precisa Gerar uma Remuneração e depois Gerar Sentença.");
+                System.out.println("PARA FINALIZAR VOCÊ PRECISA GERAR UMA REMUNERAÇÃO E DEPOIS GERAR A SENTENÇA.");
             }
             break;
         }
@@ -200,52 +195,49 @@ public class FinalizarProcesso extends ComentariosProcessos {
     }
 
     public void mostrarProcesso() {
-        System.out.println("INFORME O NUMERO DO PROCESSO");
+        System.out.println("INFORME O NÚMERO DO PROCESSO");
         int valor = Ler.nextInt();
 
         for (int i = 0; i < finalizarProcessos.size(); i++) {
             if (finalizarProcessos.get(i).getNumProcesso() == valor) {
 
-                System.out.println("NUMERO DO PROCESSO " + finalizarProcessos.get(i).getNumProcesso());
-                System.out.println("AUDIÊNCIA : " + finalizarProcessos.get(i).getNumAudiencia());
-                System.out.println("VAI RECORRER :" + finalizarProcessos.get(i).getVaiRecorrer());
-                System.out.println("ASSUNTO : " + finalizarProcessos.get(i).getAssunto());
-                System.out.println("NOME DO EMPREGADOR : " + finalizarProcessos.get(i).getNomeEmpregador());
-                System.out.println("NOME DO ADVODGADO : " + finalizarProcessos.get(i).getNomeAdvogado());
-                System.out.println("TRIBUNAL : " + finalizarProcessos.get(i).tribunal);
-                System.out.println("VARA : " + finalizarProcessos.get(i).vara);
-                System.out.println("ORGÃO JUDICIAL : " + finalizarProcessos.get(i).orgaoJudicial);
-                System.out.println("CATEGORIA : " + finalizarProcessos.get(i).categoria);
-
-                System.out.println("REMUNERAÇÃO : " + finalizarProcessos.get(i).getRemuneracao());
-                System.out.println("SENTENÇA : " + finalizarProcessos.get(i).getSentenca());
-                System.out.println("STATUS : " + finalizarProcessos.get(i).getStatus());
+                System.out.println("NÚMERO DO PROCESSO: " + finalizarProcessos.get(i).getNumProcesso());
+                System.out.println("AUDIÊNCIA: " + finalizarProcessos.get(i).getNumAudiencia());
+                System.out.println("VAI RECORRER: " + finalizarProcessos.get(i).getVaiRecorrer());
+                System.out.println("ASSUNTO: " + finalizarProcessos.get(i).getAssunto());
+                System.out.println("NOME DO EMPREGADOR: " + finalizarProcessos.get(i).getNomeEmpregador());
+                System.out.println("NOME DO ADVODGADO: " + finalizarProcessos.get(i).getNomeAdvogado());
+                System.out.println("TRIBUNAL: " + finalizarProcessos.get(i).tribunal);
+                System.out.println("VARA: " + finalizarProcessos.get(i).vara);
+                System.out.println("ORGÃO JUDICIAL: " + finalizarProcessos.get(i).orgaoJudicial);
+                System.out.println("CATEGORIA: " + finalizarProcessos.get(i).categoria);
+                System.out.println("REMUNERAÇÃO: " + finalizarProcessos.get(i).getRemuneracao());
+                System.out.println("SENTENÇA: " + finalizarProcessos.get(i).getSentenca());
+                System.out.println("STATUS: " + finalizarProcessos.get(i).getStatus());
 
                 i = finalizarProcessos.size();
                 break;
             }
         }
-        
-        
+
     }
 
     public void mostrarTodosProcessos() {
         for (int i = 0; i < finalizarProcessos.size(); i++) {
 
-            System.out.println("NUMERO DO PROCESSO " + finalizarProcessos.get(i).getNumProcesso());
-                System.out.println("AUDIÊNCIA : " + finalizarProcessos.get(i).getNumAudiencia());
-                System.out.println("VAI RECORRER :" + finalizarProcessos.get(i).getVaiRecorrer());
-                System.out.println("ASSUNTO : " + finalizarProcessos.get(i).getAssunto());
-                System.out.println("NOME DO EMPREGADOR : " + finalizarProcessos.get(i).getNomeEmpregador());
-                System.out.println("NOME DO ADVODGADO : " + finalizarProcessos.get(i).getNomeAdvogado());
-                System.out.println("TRIBUNAL : " + finalizarProcessos.get(i).tribunal);
-                System.out.println("VARA : " + finalizarProcessos.get(i).vara);
-                System.out.println("ORGÃO JUDICIAL : " + finalizarProcessos.get(i).orgaoJudicial);
-                System.out.println("CATEGORIA : " + finalizarProcessos.get(i).categoria);
-
-                System.out.println("REMUNERAÇÃO : " + finalizarProcessos.get(i).getRemuneracao());
-                System.out.println("SENTENÇA : " + finalizarProcessos.get(i).getSentenca());
-                System.out.println("STATUS : " + finalizarProcessos.get(i).getStatus());
+            System.out.println("NÚMERO DO PROCESSO: " + finalizarProcessos.get(i).getNumProcesso());
+            System.out.println("AUDIÊNCIA: " + finalizarProcessos.get(i).getNumAudiencia());
+            System.out.println("VAI RECORRER:" + finalizarProcessos.get(i).getVaiRecorrer());
+            System.out.println("ASSUNTO: " + finalizarProcessos.get(i).getAssunto());
+            System.out.println("NOME DO EMPREGADOR: " + finalizarProcessos.get(i).getNomeEmpregador());
+            System.out.println("NOME DO ADVODGADO: " + finalizarProcessos.get(i).getNomeAdvogado());
+            System.out.println("TRIBUNAL: " + finalizarProcessos.get(i).tribunal);
+            System.out.println("VARA: " + finalizarProcessos.get(i).vara);
+            System.out.println("ORGÃO JUDICIAL: " + finalizarProcessos.get(i).orgaoJudicial);
+            System.out.println("CATEGORIA: " + finalizarProcessos.get(i).categoria);
+            System.out.println("REMUNERAÇÃO: " + finalizarProcessos.get(i).getRemuneracao());
+            System.out.println("SENTENÇA : " + finalizarProcessos.get(i).getSentenca());
+            System.out.println("STATUS: " + finalizarProcessos.get(i).getStatus());
 
         }
     }
